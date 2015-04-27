@@ -7,6 +7,12 @@ from . import Search
 
 
 class EditArea(gui.VWidget):
+    """
+    Args:
+        global_state      (models.global_state)          : global state of the app
+        editor_controller (controllers.EditorController) : TODO
+        parent            (vaitk.gui.VWidget)            : parent in widget tree
+    """
     def __init__(self, global_state, editor_controller, parent):
         super().__init__(parent)
         self._buffer = None

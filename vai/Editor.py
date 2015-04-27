@@ -12,6 +12,13 @@ class Editor(gui.VWidget):
     """
     Widget responsible for handling the overall aspect of the editor,
     aggregating the different components.
+
+    Args:
+        editor_app   (EditorApp.EditorApp) : App responsible for async operations.
+        global_state (models.GlobalState)  : Global (not buffer dependent) state
+        buffer_list  (models.BufferList)   : Global list of buffers
+        parent       (vaitk.VWidget)       : Parent in the widget tree.
+
     """
 
     def __init__(self, editor_app, global_state, buffer_list, parent=None):
@@ -37,6 +44,7 @@ class Editor(gui.VWidget):
         self._controller.registerCurrentBuffer()
 
     def show(self):
+        """Show self and focus the edit area"""
         super().show()
         self._edit_area.setFocus()
 

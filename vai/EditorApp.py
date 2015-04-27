@@ -19,12 +19,27 @@ class EditorApp(gui.VApplication):
         self._editor.show()
 
     def openFile(self, path):
+        """Make the file at 'path' ready to edit.
+
+        Args:
+            path (str) : as expected by `open(path, 'r')`
+
+        If the file is already opened in a buffer, focus that buffer. Else create
+        a new buffer and focuse that one.
+        """
         self._editor.controller.openFile(path)
 
     def dumpBuffers(self, destination_dir=None):
         """
-        Dump the buffers to your home directory in case of a crash.
-        Returns the list of files dumped down.
+        Dumps the content of the buffers to destionation_dir.
+
+        Args:
+            destionation_dir (str) : directory to dump buffers into
+
+        Returns:
+            (list): list of files dumped
+
+        Default destination is the home directory of the user.
         """
 
         if destination_dir is None:
