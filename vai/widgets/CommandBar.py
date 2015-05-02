@@ -1,6 +1,22 @@
 import vaitk
 from vaitk import gui, core
 from ..models import EditorMode
+from collections import defaultdict
+
+EditorModeView = {
+        EditorMode.COMMAND_INPUT : "Command: ",
+        EditorMode.DELETE : "Delete ...",
+        EditorMode.SEARCH_FORWARD : "Search: ",
+        EditorMode.SEARCH_BACKWARD : "Search backward: ",
+        EditorMode.GO : "Go to ...",
+        EditorMode.BOOKMARK : "Set bookmark ...",
+        EditorMode.GOTOBOOKMARK : "Go to bookmark ...",
+        EditorMode.INSERT : "-- INSERT --",
+        EditorMode.VISUAL_BLOCK : "-- VISUAL BLOCK --",
+        EditorMode.VISUAL_LINE : "-- VISUAL LINE--",
+        EditorMode.VISUAL : "-- VISUAL --",
+        EditorMode.REPLACE : "-- REPLACE --",
+        }
 
 class CommandBar(gui.VWidget):
     def __init__(self, parent=None):
