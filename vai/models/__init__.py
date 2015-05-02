@@ -4,7 +4,7 @@ from .EditAreaModel import EditAreaModel
 from .GlobalState import GlobalState
 from .TextDocumentCursor import TextDocumentCursor
 from .TextDocument import TextDocument
-from .EditorMode import EditorMode
+import EditorMode
 from .Configuration import Configuration
 from .EditorState import EditorState
 from .SyntaxColors import SyntaxColors

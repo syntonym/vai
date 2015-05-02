@@ -71,33 +71,7 @@ class CommandBar(gui.VWidget):
     # Private
 
     def _updateText(self):
-        if self._editor_mode == EditorMode.INSERT:
-            text = "-- INSERT --"
-        elif self._editor_mode == EditorMode.COMMAND_INPUT:
-            text = "Command: "
-        elif self._editor_mode == EditorMode.REPLACE:
-            text = "-- REPLACE --"
-        elif self._editor_mode == EditorMode.VISUAL_BLOCK:
-            text = "-- VISUAL BLOCK --"
-        elif self._editor_mode == EditorMode.VISUAL_LINE:
-            text = "-- VISUAL LINE --"
-        elif self._editor_mode == EditorMode.VISUAL:
-            text = "-- VISUAL --"
-        elif self._editor_mode == EditorMode.SEARCH_FORWARD:
-            text = "Search: "
-        elif self._editor_mode == EditorMode.SEARCH_BACKWARD:
-            text = "Search backward: "
-        elif self._editor_mode == EditorMode.BOOKMARK:
-            text = "Set bookmark ..."
-        elif self._editor_mode == EditorMode.GOTOBOOKMARK:
-            text = "Go to bookmark ..."
-        elif self._editor_mode == EditorMode.DELETE:
-            text = "Delete ..."
-        elif self._editor_mode == EditorMode.GO:
-            text = "Go to ..."
-        else:
-            text = ""
-
+        text = self._editor_mode.text
         self._state_label.resize( (len(text), 1) )
         self._state_label.setText(text)
         self._line_edit.setGeometry( (len(text), 0, self.width()-len(text), 1) )
